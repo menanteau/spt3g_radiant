@@ -7,7 +7,8 @@ yum install -y which make python3-devel openssl-devel openssl cfitsio bzip2 bzip
 yum install -y flac netcdf flac-devel netcdf-devel
 
 # Enable devtoolset
-/usr/bin/scl enable devtoolset-9
+#/usr/bin/scl enable devtoolset-9
+scl enable devtoolset-9 bash
 
 # get pip3
 cd /usr/local/src/
@@ -16,7 +17,7 @@ chmod 755 ./get-pip.py
 python3 ./get-pip.py
 
 # Get scipy, astropy, etc.
-pip3 install scipy astropy numexpr healpy pyyaml sphinx
+pip3 install scipy astropy numexpr healpy pyyaml sphinx pandas
 
 # Install boost in /usr/local/src
 cd /usr/local/src/
